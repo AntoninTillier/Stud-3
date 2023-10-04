@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">internationalisation</string>
+    <string name="app_accueil">page d’accueil</string>
+    <string name="bjBlois">Bonjour Blois !</string>
+</resources>
