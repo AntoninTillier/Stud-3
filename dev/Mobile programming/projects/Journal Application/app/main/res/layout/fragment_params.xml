@@ -1,0 +1,71 @@
+<LinearLayout
+    android:id="@+id/fragment_params_rootview"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pormob.aq.fragments.ParamsFragment"
+    android:orientation="vertical"
+    android:background="#EDD9CF">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permissions :"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="20dp"
+        android:padding="1dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#4d4d4d" />
+
+    <Switch
+        android:id="@+id/switchGalleries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="Galleries or Photo    " />
+
+    <Switch
+        android:id="@+id/switchCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Camera    " />
+
+    <Switch
+        android:id="@+id/switchLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Location  " />
+
+    <TextView
+        android:id="@+id/locationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="13sp"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/other_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="#fff"
+        android:textSize="13sp"
+        android:background="@drawable/button_radius_primary_color"
+        android:layout_margin="10dip"
+        android:padding="10dip"
+        android:text="@string/other_params"/>
+
+
+</LinearLayout>

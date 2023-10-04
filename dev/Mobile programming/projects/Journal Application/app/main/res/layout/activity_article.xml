@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_article_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDD9CF"
+    tools:context=".ArticleActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_article_layout_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_article_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark" />
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right|end">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activity_new_floating_action_button_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|end"
+        android:clickable="true"
+        app:backgroundTint="#eee"
+        android:src="@drawable/ic_comment_black_24dp"
+        app:layout_anchor="@id/activity_article_layout_detail"
+        app:layout_anchorGravity="bottom|right|end"/>
+        <TextView
+            android:id="@+id/textview_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:text="0"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="17dp"
+            android:elevation="6dp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:layout_anchor="@id/activity_new_floating_action_button_comment">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activity_new_floating_action_button_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:clickable="true"
+        app:backgroundTint="#eee"
+        android:src="@drawable/ic_share"
+        app:layout_anchor="@id/activity_new_floating_action_button_comment"
+        app:layout_anchorGravity="top"/>
+        <TextView
+            android:id="@+id/textview_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:text="0"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="14dp"
+            android:elevation="6dp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">AQ</string>
+
+    <string name="error_authentication_canceled">Authentification annulée&#8230;</string>
+    <string name="error_no_internet">Aucune connexion internet</string>
+    <string name="error_unknown_error">Une erreur inconnue s\'est produite&#8230;</string>
+    <string name="connection_succeed">Authentification réussie</string>
+    <string name="button_login_text_logged">Profil</string>
+    <string name="button_login_text_not_logged">Connexion</string>
+
+    <string name="toolbar_title_login_activity">Profil</string>
+    <string name="text_input_username">Nom d\'utilisateur</string>
+    <string name="text_view_email">Adresse e-mail :</string>
+    <string name="button_update_account">Mettre à jour le nom d\'utilisateur</string>
+    <string name="button_copy_uid">Partager votre uid</string>
+    <string name="button_delete_account">Supprimer mon compte</string>
+    <string name="button_sign_out_account">Déconnexion</string>
+    <string name="info_no_email_found">Auncune adresse e-mail</string>
+    <string name="info_no_username_found">Aucun nom d\'utilisateur</string>
+    <string name="popup_message_confirmation_delete_account">Es-vous sûr de vouloir supprimer votre compte ?</string>
+    <string name="popup_message_choice_yes">Oui</string>
+    <string name="popup_message_choice_no">Non</string>
+    <string name="popup_message_choice_ok">D\'accord</string>
+    <string name="title_activity_main">Fil d\'actualité</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="deconnexion">Déconnexion réussie</string>
+    <string name="supression">Supression du compte réussie</string>
+    <string name="other_params">Autres</string>
+
+    <string name="toolbar_title_parametre_activity">Paramètres</string>
+
+    <string name="popup_title_permission_files_access">Cette application a besoin de permissions pour fonctionner.</string>
+    <string name="popup_message_floating_button">Connectez-vous pour accéder aux Messages</string>
+    <string name="popup_message_floating_button_Comment">Connectez-vous pour accéder aux Commentaires</string>
+    <string name="toast_title_no_image_chosen">Aucune image choisie&#8230;</string>
+
+    <string name="error_share_canceled">Partage annulé</string>
+    <string name="share_succeed">Partage réussi</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="notification_title">"Vous avez reçu une notification"</string>
+
+</resources>

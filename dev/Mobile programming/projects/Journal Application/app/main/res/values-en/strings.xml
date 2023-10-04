@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">AQ</string>
+
+    <string name="error_authentication_canceled">Authentication canceled&#8230;</string>
+    <string name="error_no_internet">No internet access</string>
+    <string name="error_unknown_error">An unknown error has occurred&#8230;</string>
+    <string name="connection_succeed">Successful authentication</string>
+    <string name="button_login_text_logged">Profile</string>
+    <string name="button_login_text_not_logged">Login</string>
+
+    <string name="toolbar_title_login_activity">Profile</string>
+    <string name="text_input_username">Username</string>
+    <string name="text_view_email">E-mail address :</string>
+    <string name="button_update_account">Update username</string>
+    <string name="button_copy_uid">Share your uid</string>
+    <string name="button_delete_account">Delete my account</string>
+    <string name="button_sign_out_account">Logout</string>
+    <string name="info_no_email_found">No e-mail address</string>
+    <string name="info_no_username_found">No username</string>
+    <string name="popup_message_confirmation_delete_account">Are you sure you want to delete your account ?</string>
+    <string name="popup_message_choice_yes">Yes</string>
+    <string name="popup_message_choice_no">No</string>
+    <string name="popup_message_choice_ok">Ok</string>
+    <string name="title_activity_main">News feed</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="deconnexion">Successful logout</string>
+    <string name="supression">Successful account suppression</string>
+    <string name="other_params">Other</string>
+
+    <string name="toolbar_title_parametre_activity">Settings</string>
+
+    <string name="popup_title_permission_files_access">This application needs permissions to run.</string>
+    <string name="popup_message_floating_button">Sign in to access Messages</string>
+    <string name="popup_message_floating_button_Comment">Login to access Comments</string>
+    <string name="toast_title_no_image_chosen">No image selected&#8230;</string>
+
+    <string name="error_share_canceled">Sharing cancelled</string>
+    <string name="share_succeed">Successful sharing</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="notification_title">"You received a notification"</string>
+</resources>
