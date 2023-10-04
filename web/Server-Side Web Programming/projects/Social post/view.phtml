@@ -1,0 +1,39 @@
+<link type="text/css" rel="stylesheet" href="view.css">
+<div id="retour">
+    <a href="list.php"><< Retour</a>
+</div>
+<div id="post">
+    <h3><?= $post->getTitle() ?></h3>
+    <p><?= $post->getUsername() ?> - <?= date("d.m.y", $post->getDateTime()) ?></p>
+    <p><?= $post->getContent() ?></p>
+</div>
+<?php $i = $post->getPhoto();
+if (!empty($i)) {
+    $img = base64_decode($post->getPhoto());
+    echo '<img src="' . $img . '">';
+} ?>
+
+<?php foreach ($comments
+
+as $comment) { ?>
+<hr size="">
+<p><?= $comment->getContent() ?><p>
+<p>commentaire posté par <?= $comment->getUsername() ?> - <?= date("d.m.y", $comment->getDateTime()) ?><p>
+    <?php if (isOwner($comment)) { ?>
+        <a id="modif" href="comment-update.php?<?= $comment->getID() ?>">Modifier</a>
+        <a id="supp" href="comment-delete.php?<?= $comment->getID() ?>">Supprimer</a>
+    <?php } ?>
+    <?php } ?>
+
+<hr id="endComment" size="0">
+
+<form action="do-comment-insert.php?<?= $post->getID() ?>" method="post">
+    <div>
+        <h1>Commentaire</h1>
+        <textarea name="content" cols="50" rows="10" required></textarea>
+    </div>
+    <div>
+        <br>
+    </div>
+    <input type="submit" name="submit" value="Soumettre">
+</form>

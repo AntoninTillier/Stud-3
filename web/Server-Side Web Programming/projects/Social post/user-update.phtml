@@ -1,0 +1,127 @@
+<link type="text/css" rel="stylesheet" href="user-update.css">
+<div id="retour">
+    <a href="index.php"><< Retour</a>
+</div>
+<br>
+<form action="do-user-update.php" method="post">
+    <div>
+        <h1>Nom d'utilisateur</h1>
+        <input
+            <?php if ($ename == "name") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="text" name="username" value=<?= $user->getUsername() ?> size="30"
+            placeholder="" required>
+        <?php if ($ename == "name") { ?>
+            <p style="color:red;">Un utilisateur avec ce nom existe déja, veuillez entrer un autre nom.</p>
+        <?php } ?>
+    </div>
+
+    <div>
+        <h1>E-mail</h1>
+        <input
+            <?php if ($eemail == "email") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="text" name="email" value=<?= $user->getEmail() ?> size="30"
+            placeholder="" required>
+        <?php if ($eemail == "email") { ?>
+            <p style="color:red;">L'E-mail n'est pas valide.</p>
+        <?php } ?>
+    </div>
+    <div>
+        <br>
+    </div>
+
+    <div>
+        <button class="maskmdp" type="button">Changer de mots de passe</button>
+        <button class="maskcmdp" type="button">Garder l'ancien mot de passe</button>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div class="cmdp" style="display:none;">
+        <h1>Changer votre mot de passe</h1>
+        <input
+            <?php if ($emdp == "mdp") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="password" name="password" onchange="remplirmdp()" value=""
+            size="30" placeholder="" required>
+    </div>
+    <div class="cmdp" style="display:none;">
+        <h1>Répéter le mot de passe</h1>
+        <input
+            <?php if ($emdp == "mdp") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="password" name="passwordx" value="" size="30" placeholder=""
+            required>
+        <?php if ($emdp == "mdp") { ?>
+            <p style="color:red;">Les deux mots de passe ne correspondent pas.</p>
+        <?php } ?>
+    </div>
+
+    <div id="mdp" style="display:none;">
+        <h1>Rentrer votre mot de passe</h1>
+        <input
+            <?php if ($eamdp == "amdp") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="password" name="password" value="" placeholder="">
+        <?php if ($eamdp == "amdp") { ?>
+            <p style="color:red;">Ceci n'est pas votre mot de passe.</p>
+        <?php } ?>
+    </div>
+    <div>
+        <br>
+    </div>
+    <input type="hidden" name="id" value="<?= $user->getID() ?>">
+    <input type="hidden" name="lastUsername" value="<?= $user->getUsername() ?>">
+    <input type="hidden" name="firstname" value="<?= explode(" ", $user->getName())[0] ?>">
+    <input type="hidden" name="lastname" value="<?= explode(" ", $user->getName())[1] ?>">
+    <input type="submit" name="submit" value="Modifier">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script id="rendered-js">
+    $('.maskmdp').on('click', function () {
+        affiche("maskmdp");
+    });
+
+    $('.maskcmdp').on('click', function () {
+        affiche("maskcmdp");
+    });
+
+    function affiche() {
+        var p = document.getElementsByClassName('password');
+        if (p[0].type == "password" && p[1].type == "password") {
+            p[0].type = "text";
+            p[1].type = "text";
+        } else {
+            p[0].type = "password";
+            p[1].type = "password";
+        }
+    }
+
+    function remettreNormalement(elm) {
+        elm.setAttribute('style', 'border-top:;border-bottom:;border-left:;border-right:;');
+    }
+
+    function affiche(e) {
+        var c = document.getElementsByClassName("cmdp");
+        if (e == "maskmdp") {
+            c[0].style.display = "block";
+            c[0].childNodes[3].required = true;
+            c[1].style.display = "block";
+            c[1].childNodes[3].required = true;
+        } else {
+            c[0].style.display = "none";
+            c[0].childNodes[3].required = false;
+            c[1].style.display = "none";
+            c[1].childNodes[3].required = false;
+        }
+        if (e == "maskcmdp") {
+            if (document.getElementById("mdp") == null) {
+
+            } else {
+                document.getElementById("mdp").style.display = "block";
+            }
+        } else {
+            document.getElementById("mdp").style.display = "none";
+        }
+    }
+
+    function remplirmdp() {
+        document.getElementById("mdp").childNodes[3].value = document.getElementsByClassName("cmdp")[0].childNodes[3].value;
+    }
+</script>

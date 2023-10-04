@@ -1,0 +1,37 @@
+<link type="text/css" rel="stylesheet" href="list.css">
+<header id="header" role="banner" class="main-header">
+    <div class="header-inner">
+        <div class="header-logo">
+            <img src="logo.png" alt="Liste des articles" width="150" height="45">
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li><a href="post-insert.php?">Ecrire Article</a></li>
+                <li><a href="user-update.php">Modifier compte</a></li>
+                <li><a href="deconnexion.php">Déconnexion</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<br>
+
+<div class="postView">
+    <?php foreach ($posts as $post) { ?>
+        <div class="post">
+            <p>Article posté le, <?= date("d.m.y", $post->getDateTime()) ?></p>
+            <br>
+            <a id="linkPost" href="view.php?<?= $post->getID() ?>">
+                <?= $post->getTitle() ?> par <?= $post->getName() ?>
+            </a>
+            <?php if (isOwner($post)) { ?>
+                <br>
+                <br>
+                <a id="modif" href="post-update.php?<?= $post->getID() ?>">Modifier</a>
+                <a id="supp" href="post-delete.php?<?= $post->getID() ?>">Supprimer</a>
+            <?php } ?>
+        </div>
+        <br>
+    <?php } ?>
+</div>

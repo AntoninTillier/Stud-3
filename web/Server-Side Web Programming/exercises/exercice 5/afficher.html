@@ -1,0 +1,64 @@
+<html>
+<head>
+</head>
+<body bgcolor="#EEEEEE">
+<form action="afficher.php" method="POST" enctype="multipart/form-data">
+    <div>
+        Nom
+        <input type="text" name="nom" value="<?=$username?>">
+    </div>
+    <br>
+    <div>
+        Photo
+        <input type="file" name="photo">
+    </div>
+    <br>
+    <div>
+        Marque préférée
+        <input type="checkbox" name="marque[peugeot]" <?=$peugeot_checked?>>Peugeot
+        <input type="checkbox" name="marque[citroen]" <?=$citroen_checked?>>Citroën
+        <input type="checkbox" name="marque[renault]" <?=$renault_checked?>>Renault
+        <input type="checkbox" name="marque[?]" <?=$marque_checked?>>Ne sait pas
+    </div>
+    <br>
+    <div>
+        Carburant préféré
+        <input type="radio" name="carburant" value="diesel" <?=$diesel_checked?>>Diesel
+        <input type="radio" name="carburant" value="essence" <?=$essence_checked?>>Essence
+        <input type="radio" name="carburant" value="?" <?=$carburant_checked?>>Ne sait pas
+    </div>
+    <br>
+    <div>
+        Moteur préférée
+        <select name="moteur">
+            <option value="D1"
+            <?=$d1_selected?>>Diesel 1.0L</option>
+            <option value="D2"
+            <?=$d2_selected?>>Diesel 2.0L</option>
+            <option value="D3"
+            <?=$d3_selected?>>Diesel 3.0L</option>
+            <option value="D4"
+            <?=$d4_selected?>>Diesel 4.0L</option>
+            <option value="E2"
+            <?=$e2_selected?>>Essense 2.0L</option>
+            <option value="E3"
+            <?=$e3_selected?>>Essense 3.0L</option>
+            <option value="E4"
+            <?=$e4_selected?>>Essense 4.0L</option>
+            <option value="?"
+            <?=$moteur_selected?>>Ne sait pas</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        Commentaire<br>
+        <textarea name="commentaire" rows="5" cols="20"><?=$commentaire?></textarea>
+        <input type="hidden" name="invisible" value="Hello Bonjour Welcome">
+    </div>
+    <br>
+    <div>
+        <input type="submit" name="submit" value="Soumettre">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<h3>Tous les commentaires</h3>
+<?php if (count($comments) == 0) { ?>
+    <p>Aucun commentaire disponible.</p>
+<?php } else { ?>
+<ol>
+    <?php foreach ($comments as $comment) { ?>
+        <li>
+            <a href="view.php?<?= $comment["code"] ?>">Noté <?= $comment["note"] ?> par <?= $comment["name"] ?>
+                (<?= $comment["date"] ?>)</a>
+        </li>
+    <?php }
+    } ?>
+</ol>

@@ -1,0 +1,18 @@
+<link type="text/css" rel="stylesheet" href="comment-update.css">
+<div id="retour">
+    <a href=<?= $_SERVER['HTTP_REFERER'] ?>><< Retour</a>
+</div>
+<br>
+
+<form action="do-comment-update.php?<?php echo $commentID ?>" method="post" enctype="multipart/form-data">
+    <div>
+        <h1>Commentaire</h1>
+        <textarea name="content" rows=10 cols=50 placeholder=""
+                  required><?php echo $comment->getContent(); ?></textarea>
+    </div>
+    <div>
+        <br>
+    </div>
+    <input type="hidden" name="view" value=<?php echo $comment->getPostID(); ?>>
+    <input type="submit" name="submit" value="Modifier">
+</form>

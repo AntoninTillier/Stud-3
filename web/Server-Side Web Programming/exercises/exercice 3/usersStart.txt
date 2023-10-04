@@ -1,0 +1,6 @@
+#users.txt
+#ID:USERNAME:PASSWORD:REALNAME:GROUP
+0:admin:2500e0d5b347495e1503f3f32d70edd0:Administrateur:0
+1:jc:4fd97ed412e6535c43cedb0be20ed27e:Je-Coucou Exemple:1
+2:abc:fad36b538114ddba2bc2500750c8d9dc::1
+5:mdb:4a36ee2caabec129eff6b3541e2e0be5::999

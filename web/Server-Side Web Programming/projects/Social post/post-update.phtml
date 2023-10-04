@@ -1,0 +1,75 @@
+<link type="text/css" rel="stylesheet" href="post-update.css">
+<div id="retour">
+    <a href=<?= $_SERVER['HTTP_REFERER'] ?>><< Retour</a>
+</div>
+<form action="do-post-update.php?<?php echo $postID ?>" method="post" enctype="multipart/form-data">
+    <div>
+        <h1>Titre</h1>
+        <input type="text" name="title" value="<?php echo $post->getTitle(); ?>" placeholder="" required>
+    </div>
+    <div>
+        <h1>Contenu</h1>
+        <textarea name="content" rows=10 cols=40 placeholder="" required><?php echo $post->getContent(); ?></textarea>
+    </div>
+    <br>
+    <div>
+        <button class="maskmdp" type="button">Changer de photo</button>
+        <button class="maskcmdp" type="button">Garder l'ancien photo</button>
+    </div>
+    <div>
+        <br>
+        <div class="cmdp" style="display:none;">
+            <h1>Photo</h1>
+            <input type="file" name="photo" accept=".jpg, .jpeg, .png, .bmp" required>
+        </div>
+        <div>
+            <br>
+        </div>
+        <input type="hidden" name="username" value=<?php echo $_SESSION['user']; ?>>
+        <input id="mdp" type="hidden" name="photo" value="<?php echo base64_decode($post->getPhoto()); ?>" required>
+        <input type="submit" name="submit" value="Modifier">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script id="rendered-js">
+    $('.maskmdp').on('click', function () {
+        affiche("maskmdp");
+    });
+    $('.maskcmdp').on('click', function () {
+        affiche("maskcmdp");
+    });
+
+    function affiche() {
+        var p = document.getElementsByClassName('password');
+        if (p[0].type == "password" && p[1].type == "password") {
+            p[0].type = "text";
+            p[1].type = "text";
+        } else {
+            p[0].type = "password";
+            p[1].type = "password";
+        }
+    }
+
+    function affiche(e) {
+        var c = document.getElementsByClassName("cmdp");
+        if (e == "maskmdp") {
+            c[0].style.display = "block";
+            c[0].childNodes[3].required = true;
+            c[1].style.display = "block";
+            c[1].childNodes[3].required = true;
+        } else {
+            c[0].style.display = "none";
+            c[0].childNodes[3].required = false;
+            c[1].style.display = "none";
+            c[1].childNodes[3].required = false;
+        }
+        if (e == "maskcmdp") {
+            if (document.getElementById("mdp") == null) {
+
+            } else {
+                document.getElementById("mdp").style.display = "block";
+            }
+        } else {
+            document.getElementById("mdp").style.display = "none";
+        }
+    }
+</script>

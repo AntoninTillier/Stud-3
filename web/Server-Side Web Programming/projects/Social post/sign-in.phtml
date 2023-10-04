@@ -1,0 +1,70 @@
+<link type="text/css" rel="stylesheet" href="sign-in.css">
+<br>
+<form action="do-sign-in.php" method="post">
+    <div>
+        <h1>Nom d'utilisateur</h1>
+        <input
+            <?php if ($e == "e") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" type="text" name="username" value="" placeholder="" required>
+    </div>
+
+    <div>
+        <h1>Mot de passe</h1>
+        <input
+            <?php if ($e == "e") { ?>style='border-top:2px solid red;border-bottom:2px solid red;border-left:2px solid red;border-right:2px solid red;' <?php } ?>
+            onclick="remettreNormalement(this)" id="password" type="password" name="password" value="" placeholder=""
+            required>
+        <button class="unmask" type="button" title="Afficher le mot de passe.">Unmask</button>
+        <?php if ($e == "e") { ?>
+            <p style='color:red;'>Le nom d'utilisateur ou le mot de passe n'est pas valide.</p>
+        <?php } ?>
+    </div>
+    <br>
+    <input type="submit" name="submit" value="Connexion">
+</form>
+<br>
+<div id=inscription>
+    <a href="sign-up.php">Créer un compte</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script id="rendered-js">
+    $('.unmask').on('click', function () {
+        if ($(this).prev('input').attr('type') == 'password')
+            changeType($(this).prev('input'), 'text');
+        else
+            changeType($(this).prev('input'), 'password');
+        return false;
+    });
+
+    function changeType(x, type) {
+        if (x.prop('type') == type)
+            return x;
+        try {
+            return x.prop('type', type);
+        } catch (e) {
+            var html = $("<div>").append(x.clone()).html();
+            var regex = /type=(\")?([^\"\s]+)(\")?/;
+            var tmp = $(html.match(regex) == null ?
+                html.replace(">", ' type="' + type + '">') :
+                html.replace(regex, 'type="' + type + '"'));
+            tmp.data('type', x.data('type'));
+            var events = x.data('events');
+            var cb = function (events) {
+                return function () {
+                    for (i in events) {
+                        var y = events[i];
+                        for (j in y)
+                            tmp.bind(i, y[j].handler);
+                    }
+                }
+            }(events);
+            x.replaceWith(tmp);
+            setTimeout(cb, 10);
+            return tmp;
+        }
+    }
+
+    function remettreNormalement(elm) {
+        elm.setAttribute('style', 'border-top:;border-bottom:;border-left:;border-right:;');
+    }
+</script>

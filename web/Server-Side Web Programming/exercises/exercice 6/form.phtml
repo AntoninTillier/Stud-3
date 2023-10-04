@@ -1,0 +1,33 @@
+<h3>Écrire un commentaire</h3>
+<form action="do-post.php" method="post">
+    <div>
+        Nom :<br>
+        <input type="text" name="name" value="" size="30" placeholder="Votre nom" required>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        Note :<br>
+        <input type="radio" name="note" value="5" required> 5
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="note" value="4" required> 4
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="note" value="3" checked required> 3
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="note" value="2" required> 2
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="note" value="1" required> 1
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        Commentaire :<br>
+        <textarea name="text" cols="30" rows="10" required></textarea>
+    </div>
+    <div>
+        <br>
+    </div>
+    <input type="submit" name="submit" value="Soumettre">
+</form>

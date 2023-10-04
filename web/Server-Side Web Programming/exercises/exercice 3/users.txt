@@ -1,0 +1,4 @@
+#users.txt
+#ID:USERNAME:PASSWORD:REALNAME:GROUP
+0:admin:2500e0d5b347495e1503f3f32d70edd0:Administrateur:0
+6:hello:f5a7924e621e84c9280a9a27e1bcb7f6:Hello World:888

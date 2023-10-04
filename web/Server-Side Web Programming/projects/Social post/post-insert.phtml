@@ -1,0 +1,30 @@
+<?php require_once "session.php"; ?>
+<link type="text/css" rel="stylesheet" href="post-insert.css">
+<div id="retour">
+    <a href=<?= $_SERVER['HTTP_REFERER'] ?>><< Retour</a>
+</div>
+<form action="do-post-insert.php" method="post" enctype="multipart/form-data">
+    <div>
+        <h1>Titre</h1>
+        <input type="text" name="title" value="" placeholder="" required>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <h1>Contenu</h1>
+        <textarea name="content" value="" rows=10 cols=40 placeholder="" required></textarea>
+    </div>
+    <div>
+        <br>
+    </div>
+    <div>
+        <h1>Photo</h1>
+        <input class="file" type="file" name="photo" value="" accept=".jpg, .jpeg, .png, .bmp">
+    </div>
+    <div>
+        <br>
+    </div>
+    <input type="hidden" name="username" value=<?php echo $_SESSION['user']; ?>>
+    <input type="submit" name="submit" value="Créer">
+</form>

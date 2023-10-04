@@ -1,0 +1,31 @@
+div {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    font-size: 25px;
+    color: #989598;
+    font-weight: 100;
+}
+
+#retour {
+    background: #aaa;
+    width: 60px;
+    padding: 15px 12px;
+    border-radius: 10px;
+    margin-right: 100%;
+}
+
+a {
+    background: #aaa;
+    text-decoration: none;
+    color: #484548;
+    font-size: 14px;
+}
+
+a:hover {
+    color: #ffff;
+}

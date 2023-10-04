@@ -1,0 +1,66 @@
+<html>
+<head>
+</head>
+<body bgcolor="#EEEEEE">
+<div>
+    <a href="afficher.php">Connexion</a>
+</div>
+<br>
+<br>
+<form action="dopost.php" method="POST" enctype="multipart/form-data">
+    <div>
+        Nom
+        <input type="test" name="nom" value="">
+    </div>
+    <br>
+    <div>
+        Mot de passe
+        <input type="password" name="motdepasse" value="">
+    </div>
+    <br>
+    <div>
+        Photo
+        <input type="file" name="photo">
+    </div>
+    <br>
+    <div>
+        Marque préférée
+        <input type="checkbox" name="marque[peugeot]">Peugeot
+        <input type="checkbox" name="marque[citroen]">Citroën
+        <input type="checkbox" name="marque[renault]">Renault
+        <input type="checkbox" name="marque[?]" checked="checked">Ne sait pas
+    </div>
+    <br>
+    <div>
+        Carburant préféré
+        <input type="radio" name="carburant" value="diesel">Diesel
+        <input type="radio" name="carburant" value="essence">Essence
+        <input type="radio" name="carburant" value="?" checked>Ne sait pas
+    </div>
+    <br>
+    <div>
+        Moteur préférée
+        <select name="moteur">
+            <option value="D1">Diesel 1.0L</option>
+            <option value="D2">Diesel 2.0L</option>
+            <option value="D3">Diesel 3.0L</option>
+            <option value="D4">Diesel 4.0L</option>
+            <option value="E2">Essense 2.0L</option>
+            <option value="E3">Essense 3.0L</option>
+            <option value="E4">Essense 4.0L</option>
+            <option value="?" selected>Ne sait pas</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        Commentaire<br>
+        <textarea name="commentaire" rows="5" cols="20"></textarea>
+        <input type="hidden" name="invisible" value="Hello Bonjour Welcome">
+    </div>
+    <br>
+    <div>
+        <input type="submit" name="submit" value="Soumettre">
+    </div>
+</form>
+</body>
+</html>
