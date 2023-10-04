@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+	<display-name>ProjetJEE</display-name>
+	
+	<error-page>
+        <error-code>500</error-code>
+        <location>/errorHandler</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404</location>
+    </error-page>
+	
+	<servlet>
+		<servlet-name>Inscription</servlet-name>
+		<servlet-class>servlets.Inscription</servlet-class>
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>Connection</servlet-name>
+    	<servlet-class>servlets.Connection</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>servlets.Deconnexion</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>servlets.Home</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>UpdateUser</servlet-name>
+		<servlet-class>servlets.UpdateUser</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>servlets.View</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Post</servlet-name>
+		<servlet-class>servlets.Post</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Image</servlet-name>
+		<servlet-class>servlets.Image</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Comments</servlet-name>
+		<servlet-class>servlets.Comments</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>servlets.Search</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>History</servlet-name>
+		<servlet-class>servlets.History</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Inscription</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>Connection</servlet-name>
+    	<url-pattern>/connection</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateUser</servlet-name>
+		<url-pattern>/updateuser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Post</servlet-name>
+		<url-pattern>/post</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Image</servlet-name>
+		<url-pattern>/image</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Comments</servlet-name>
+		<url-pattern>/comments</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>History</servlet-name>
+		<url-pattern>/history</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
